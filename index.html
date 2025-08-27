@@ -10,68 +10,65 @@
     <link rel="stylesheet" href="assets/script.js">
     <link rel="icon" href="assets/Crying-Cat-Meme-PNG-Free-Download.png" type="image/png">
     <style>
-        body {
+        body::before {
+            content: "";
+            position: fixed;
+            width: 100%;
+            height: 100%;
             background-image: url('https://marketplace.canva.com/EAF94JoFhlk/1/0/1600w/canva-colorful-pastel-flower-illustration-desktop-wallpaper-GyLQ4rd9Hig.jpg');
             background-repeat: no-repeat;
             background-size: cover;
             background-position: center;
+            filter: blur(5px);
+            /* adjust blur level */
+            transform: scale(1.1);
+            /* avoid edge cutoff */
+            z-index: -1;
+            /* keep it behind everything */
         }
     </style>
 </head>
 
 <body>
-    <!-- <main class="card">
-        <h1>💡 Gợi ý cho tớ ý tưởng video tiếp theo!</h1>
-        <form id="quickForm">
-            Tên
-            <div class="field">
-                <label for="nameInput">Tên của cậu là gì?</label>
-                <input id="nameInput" name="name" type="text"
-                    placeholder="Để tớ biết ai là thiên tài đứng sau ý tưởng này 👀" required />
-            </div>
-
-            Ý tưởng
-            <div class="field">
-                <label for="ideaInput">Ý tưởng đó là gì?</label>
-                <input id="ideaInput" name="idea" type="text" placeholder="Bật mí tiêu đề bom tấn của cậu đi!"
-                    required />
-            </div>
-
-            Chi tiết
-            <div class="field">
-                <label for="detailInput">Chi tiết hơn về ý tưởng đó</label>
-                <textarea id="detailInput" name="details" rows="4"
-                    placeholder="Thêm plot twist, cameo hay chi tiết hài hước mà cậu nghĩ ra..."></textarea>
-            </div>
-
-            Nút
-            <div class="row">
-                <button type="submit" class="btn-primary">🚀 Gửi cho tớ</button>
-                <a class="btn-secondary bmc" href="https://www.buymeacoffee.com/yourname" target="_blank">☕ Mua cho tớ
-                    ly matcha latte</a>
-            </div>
-        </form>
-    </main> -->
     <div class="contact-container">
         <form action="https://api.web3forms.com/submit" method="POST" class="contact-left">
             <div class="contact-left-title">
-                <h2>Gợi ý cho tớ ý tưởng video tiếp theo!</h2>
+                <h2>💡Gợi ý cho tớ ý tưởng video tiếp theo!</h2>
                 <hr>
             </div>
+
             <input type="hidden" name="access_key" value="d43074fe-322c-4752-8057-a48e22d01871">
-            <input type="text" name="name" placeholder="Tên của cậu là gì?" class="contact-inputs" required>
-            <input type="text" name="email" placeholder="Ý tưởng đó là gì?" class="contact-inputs" required>
+            <label id="name-label" for="full-name">Tớ nên gọi cậu là gì nè:</label>
+            <input type="text" name="name" placeholder="Ví dụ: Siêu Nhân Ẩn Danh" class="contact-inputs" required>
+
+            <label for="idea">Ý tưởng bá đạo của cậu:</label>
+            <input type="text" name="email" placeholder="Ví dụ: ‘24h uống matcha latte’" class="contact-inputs"
+                required>
+
+            <label for="message">Muốn thêm gia vị nào không?</label>
             <textarea name="message" placeholder="Thêm plot twist, cameo hay chi tiết hài hước mà cậu nghĩ ra.."
                 class="contact-inputs" required></textarea>
             <button type="submit">🚀 Gửi cho tớ<img
                     src="https://icons.veryicon.com/png/o/business/middle-stage-background-icon/submission-3.png"
                     alt=""></button>
         </form>
+
         <div class="contact-right">
             <img src="https://dthezntil550i.cloudfront.net/z5/latest/z52108141536249790017069302/6c28eabd-ae5c-4ffd-916b-a573949f0cb6.png"
-                alt="">
+                alt="Naruto-img">
+
+            <footer class="footer">
+                <p>© 2025 Chim Sẻ – Made with love</p>
+                <p>Cảm ơn bạn đã góp ý để video tiếp theo hay hơn ❤️</p>
+                <div class="social-links">
+                    <a href="https://www.youtube.com/@sparrowdacyan" target="_blank">YouTube</a> |
+                    <a href="https://www.tiktok.com/@sparrowdacyan" target="_blank">Tiktok</a>
+                </div>
+            </footer>
         </div>
+
     </div>
+
 </body>
 
 </html>
