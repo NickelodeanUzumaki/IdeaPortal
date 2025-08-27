@@ -2,115 +2,179 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: "Lucida Console", "Courier New", monospace;
 }
 body {
-  font-family: Inter, system-ui, sans-serif;
-  display: flex;
+  font-family: "MyVietnameseFont", "Be Vietnam Pro", sans-serif;
+  /* display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  height: 100vh; */
+  overflow-x: hidden; /* chặn scroll ngang */
   background: linear-gradient(#ffdad5, #fff7f9);
 }
-.card {
-  width: 100%;
-  max-width: 440px;
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 6px 30px rgba(15, 23, 42, 0.08);
-  padding: 28px;
-}
-/*
-h1 {
-  font-size: 18px;
-  margin-bottom: 16px;
-  color: #0f172a;
-}
-.field {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 14px;
-}
-label {
-  font-size: 13px;
-  color: #334155;
-  margin-bottom: 6px;
-}
-input {
-  padding: 10px 12px;
-  border: 1px solid #e6edf3;
-  border-radius: 8px;
-  font-size: 14px;
-}
-.row {
-  display: flex;
-  gap: 10px;
-  margin-top: 10px;
-}
-button,
-a {
-  flex: 1;
-  padding: 10px 14px;
-  border-radius: 10px;
-  font-weight: 600;
-  cursor: pointer;
-  text-align: center;
-}
-.btn-primary {
-  background: #0ea5a4;
-  color: white;
-  border: none;
-}
-.btn-secondary {
-  background: transparent;
-  border: 1px solid #cbd5e1;
-  color: #0f172a;
-  text-decoration: none;
-} */
-
-/* .container {
-  width: 350px;
-  background-color: white;
-  border-radius: 5px;
-  padding: 20px;
-  text-align: center;
-}
-
-.container input {
-  width: 100%;
-  padding: 10px;
-  border: none;
-  border-bottom: 2px solid #7777;
-  margin-bottom: 20px;
-  font-size: 16px;
-  outline: none;
-}
-
-.btn {
-  border: none !important;
-  cursor: pointer;
-  background-color: #32cd9c;
-  margin: 15px 0;
-  font-size: 16px;
-  width: 100%;
-  padding: 14px;
-}
-
-.btn:hover {
-  background-color: #1f7d5f;
-  color: white;
-} */
 
 .contact-container {
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
 }
 
-.ontact-left {
+.contact-left {
+  padding: 0 20px; /* khoảng cách 20px hai bên khi responsive */
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   align-items: start;
   gap: 20px;
+}
+
+.contact-left-title h2 {
+  font-weight: 600;
+  color: #a363aa;
+  font-size: 30px;
+  margin-bottom: 5px;
+}
+
+.contact-left-title hr {
+  border: none;
+  width: 480px;
+  height: 5px;
+  background-color: #d6b9e0;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.contact-inputs {
+  width: 400px;
+  height: 50px;
+  border: none;
+  outline: none;
+  padding-left: 25px;
+  font-weight: 500;
+  color: #666;
+  border-radius: 50px;
+  font-family: "MyVietnameseFont", "Be Vietnam Pro", sans-serif; /* ép font chung */
+}
+
+.contact-left textarea {
+  height: 140px;
+  padding-top: 15px;
+  border-radius: 20px;
+}
+
+.contact-inputs:focus {
+  border: 2px solid #ff994f;
+}
+
+.contact-inputs::placeholder {
+  color: #a9a9a9;
+}
+
+.contact-left button {
+  display: flex;
+  align-items: center;
+  padding: 15px 30px;
+  font-size: 16px;
+  color: #fff;
+  gap: 10px;
+  border: none;
+  border-radius: 50px;
+  background: linear-gradient(270deg, #ff994f, #fa6d86);
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+/* hiệu ứng hover cho vui */
+.contact-left button:hover {
+  transform: scale(1.05) rotate(-2deg);
+}
+
+.contact-left button img {
+  height: 15px;
+}
+
+.contact-right img {
+  width: 500px;
+}
+
+.footer {
+  text-align: center;
+  padding: 15px;
+  background: #fff7f9;
+  font-size: 14px;
+  color: #555;
+  border-top: 1px solid #ddd;
+}
+
+.mobile-footer {
+  display: none; /* Ẩn mặc định */
+}
+
+.desktop-footer {
+  display: block; /* Hiện mặc định */
+}
+
+/* Khi màn hình nhỏ hơn 800px → mobile */
+@media (max-width: 800px) {
+  .desktop-footer {
+    display: none; /* Ẩn footer ở desktop */
+  }
+  .mobile-footer {
+    display: block; /* Hiện footer ngay dưới form */
+  }
+}
+
+@media (max-width: 800px) {
+  .contact-container {
+    flex-direction: column; /* xếp dọc thay vì ngang */
+    justify-content: center;
+    align-items: center;
+    padding: 20px; /* có khoảng cách 2 bên, tránh sát viền */
+    height: auto; /* bỏ ép full 100vh để không bị tràn */
+  }
+
+  .contact-left {
+    width: 100%;
+    max-width: 500px; /* giới hạn chiều ngang */
+    padding: 0 15px; /* tránh sát viền */
+  }
+
+  .contact-left-title h2 {
+    font-size: 24px;
+    text-align: center; /* căn giữa tiêu đề */
+  }
+
+  .contact-left-title hr {
+    width: 100%; /* thay vì 480px */
+    max-width: 250px; /* gọn vừa trong mobile */
+    margin: 0 auto 20px auto; /* căn giữa + cách dưới */
+  }
+
+  .contact-inputs {
+    width: 100%;
+    max-width: 350px; /* đảm bảo không vượt màn hình nhỏ */
+    margin: 10px auto;
+    display: block;
+  }
+
+  .contact-left textarea {
+    max-width: 350px;
+    margin: 0 auto;
+    display: block;
+  }
+
+  .contact-left button {
+    display: block;
+    margin: 20px auto;
+    padding: 12px 24px;
+    border-radius: 12px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.2s ease;
+  }
+
+  .contact-right {
+    display: none;
+  }
 }
